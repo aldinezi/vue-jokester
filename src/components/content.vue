@@ -113,6 +113,10 @@ export default {
   padding-top: 60px;
 }
 
+.application--wrap {
+  background-color: #3e3e3e;
+}
+
 @media (min-width: 1280px) {
     /* For mobile phones: */
     .grid-sizer,

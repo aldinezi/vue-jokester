@@ -30,7 +30,7 @@
       <v-divider></v-divider>
     </v-navigation-drawer>
     <v-toolbar
-      color="indigo"
+      color="darkgray"
       dark
       fixed
     >

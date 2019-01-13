@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="indigo" height="auto" app fixed row justify-center>
+  <v-footer color="darkgray" dark height="auto" app fixed row justify-center>
       <v-container row justify-space-between>
       <span class="white--text">&copy; 2018</span>
       <v-spacer></v-spacer>

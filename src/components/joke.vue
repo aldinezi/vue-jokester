@@ -1,11 +1,11 @@
 <template>
-  <v-card>
+  <v-card dark color="#1f1f1f">
     <v-card-title>
       <div>
         <span>{{joke.value}}</span>
       </div>
     </v-card-title>
-    <v-card-actions class="white">
+    <v-card-actions class="gray">
       <v-spacer></v-spacer>
       <v-btn
         flat
