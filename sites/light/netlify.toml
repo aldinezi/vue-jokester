@@ -1,0 +1,2 @@
+[context."master"]
+command = "npm run build --theme=default"

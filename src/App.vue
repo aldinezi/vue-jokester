@@ -13,6 +13,9 @@ import Header from './components/header';
 
 export default {
   name: 'app',
+  beforeCreate() {
+    this.$store.dispatch('setTheme', THEME);
+  },
   components: {
     Content,
     Footer,

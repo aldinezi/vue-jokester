@@ -1,15 +1,17 @@
 <template>
-  <v-content>
-      <v-container>
-        <div class="grid"
-          data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-            <v-layout d-block class="grid-sizer"></v-layout>
-            <v-layout d-block v-for="(joke, index) in jokes" :key="index" class="grid-item">
-              <Joke :joke="joke" :action="toggleFav" :favs="favorites"></Joke>
-            </v-layout>
-        </div>
-      </v-container>
-    </v-content>
+  <div class="content-wrap" :class="{dark: darkMode}">
+    <v-content>
+        <v-container>
+          <div class="grid"
+            data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+              <v-layout d-block class="grid-sizer"></v-layout>
+              <v-layout d-block v-for="(joke, index) in jokes" :key="index" class="grid-item">
+                <Joke :joke="joke" :action="toggleFav" :favs="favorites"></Joke>
+              </v-layout>
+          </div>
+        </v-container>
+      </v-content>
+  </div>
 </template>
 <script>
 import Vue from 'vue';
@@ -49,6 +51,9 @@ export default {
     },
     favorites() {
       return this.$route.name === 'Favorites';
+    },
+    darkMode() {
+      return this.$store.getters.isDarkMode;
     },
   },
   methods: {
@@ -113,8 +118,11 @@ export default {
   padding-top: 60px;
 }
 
-.application--wrap {
-  background-color: #3e3e3e;
+.content-wrap {
+  height: 100%;
+  &.dark {
+    background-color: #3e3e3e;
+  }
 }
 
 @media (min-width: 1280px) {

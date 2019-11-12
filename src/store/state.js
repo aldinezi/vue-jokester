@@ -4,4 +4,5 @@ export default {
   selectedCategory: '',
   loading: false,
   favorites: [],
+  theme: 'light',
 };

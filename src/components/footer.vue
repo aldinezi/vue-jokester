@@ -1,5 +1,8 @@
 <template>
-  <v-footer color="darkgray" dark height="auto" app fixed row justify-center>
+  <v-footer
+    :color="darkMode ? 'darkgray' : 'indigo'"
+    :dark="darkMode"
+    height="auto" app fixed row justify-center>
       <v-container row justify-space-between>
       <span class="white--text">&copy; 2018</span>
       <v-spacer></v-spacer>
@@ -9,6 +12,11 @@
 <script>
 export default {
   name: 'Footer',
+  computed: {
+    darkMode() {
+      return this.$store.getters.isDarkMode;
+    },
+  },
 };
 </script>
 <style lang="scss">

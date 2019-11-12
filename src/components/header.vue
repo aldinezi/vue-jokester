@@ -30,8 +30,8 @@
       <v-divider></v-divider>
     </v-navigation-drawer>
     <v-toolbar
-      color="darkgray"
-      dark
+      :color="darkMode ? 'darkgray' : 'indigo'"
+      :dark="darkMode"
       fixed
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer">
@@ -54,7 +54,7 @@
       >close</v-icon>
 
       <v-btn
-        dark
+        :dark="darkMode"
         color="primary"
         @click="randJoke"
         v-if="!favorites"
@@ -63,13 +63,13 @@
         <v-icon dark>add</v-icon>
       </v-btn>
       <v-btn
-        dark
+        :dark="darkMode"
         color="pink"
         @click="clearJokes"
         v-show="!favorites && jokesAvailable"
         title="Clear jokes!"
       >Clear Jokes
-        <v-icon dark>clear</v-icon>
+        <v-icon :dark="darkMode">clear</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
       <v-text-field
@@ -112,6 +112,9 @@ export default {
     },
     jokesAvailable() {
       return this.$store.getters.jokes.length > 0;
+    },
+    darkMode() {
+      return this.$store.getters.isDarkMode;
     },
   },
   created() {

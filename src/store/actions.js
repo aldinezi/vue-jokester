@@ -55,4 +55,8 @@ export default {
   removeJokeById({ commit }, id) {
     commit(types.REMOVE_JOKE_BY_ID, id);
   },
+  setTheme({ commit }, themeName) {
+    console.log('set theme', themeName);
+    commit(types.SET_THEME, themeName);
+  },
 };

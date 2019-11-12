@@ -1,11 +1,13 @@
 <template>
-  <v-card dark color="#1f1f1f">
+  <v-card
+    :dark="darkMode"
+    :color="darkMode ? '#1f1f1f' : ''">
     <v-card-title>
       <div>
         <span>{{joke.value}}</span>
       </div>
     </v-card-title>
-    <v-card-actions class="gray">
+    <v-card-actions :class="darkMode ? 'gray' : 'white'">
       <v-spacer></v-spacer>
       <v-btn
         flat
@@ -49,6 +51,9 @@ export default {
   computed: {
     favIconColor() {
       return this.joke.fav ? 'primary darken-1' : 'grey lighten-3';
+    },
+    darkMode() {
+      return this.$store.getters.isDarkMode;
     },
   },
   methods: {

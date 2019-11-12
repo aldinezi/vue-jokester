@@ -85,4 +85,7 @@ export default {
     jokes.splice(index, 1);
     Vue.set(state, 'jokes', jokes);
   },
+  [types.SET_THEME](state, themeName) {
+    state.theme = themeName;
+  },
 };
